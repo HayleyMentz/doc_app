@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import UserForm from './UserForm';
+import DoctorForm from './DoctorForm';
 import { Link } from 'react-router-dom';
 
  
 
 
 
-const User = ({ id, name, desc, created_at, updateUser, deleteUser }) => {
+const Doctor = ({ id, title, desc, created_at, updateDoctor, deleteDoctor }) => {
   
   const [editing, setEdit] = useState(false)
 
@@ -18,11 +18,11 @@ const User = ({ id, name, desc, created_at, updateUser, deleteUser }) => {
         editing ?
         <>
           
-          <UserForm 
+          <DoctorForm 
             id={id} 
             title={title}
             desc={desc}
-            updateList={updateList}
+            updateDoctor={updateDoctor}
             setEdit={setEdit}
           />
           <button onClick={() => setEdit(false)}>Cancel</button>
@@ -49,4 +49,4 @@ const User = ({ id, name, desc, created_at, updateUser, deleteUser }) => {
   )
 }
 
-export default User;
+export default Doctor;
